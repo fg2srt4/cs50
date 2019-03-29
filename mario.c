@@ -9,8 +9,7 @@ int main(void)
     do
     {
         height = get_int("How tall should it be?");
-    }
-    while (height < 0 || height > 8);
+    } while (height < 1 || height > 8);
 
     // for loops specifying number of spaces and hashes per line
     for (int line = 0; line < height; line++)
