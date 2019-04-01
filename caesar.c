@@ -13,6 +13,7 @@ int main(int argc, string argv[])
         } else {
             string plain = get_string("Enter your message: ");
             string cypher;
+            printf("ciphertext: ");
             
             for (int i = 0, n = strlen(plain); i < n; i++) {
                 if (islower(plain[i])) {
