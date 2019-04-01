@@ -1,0 +1,6 @@
+Check to make sure that there is only one argument in command line
+Make sure all characters in argument are numbers
+
+
+n = xyz or 13
+
