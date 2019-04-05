@@ -32,7 +32,7 @@ int main(int argc, string argv[])
     
     // Get text to encode
     string p = get_string("Enter your text: \n");
-    printf("Cipher text: ");
+    printf("ciphertext: ");
     // Loop through text
     for (int i = 0, j = 0, n = strlen(p); i < n; i++)
     {            
