@@ -32,13 +32,12 @@ int main(int argc, string argv[])
     
     // Get text to encode
     string p = get_string("Enter your text: \n");
-    
+    printf("Cipher text: ");
     // Loop through text
     for (int i = 0, j = 0, n = strlen(p); i < n; i++)
     {            
         // Get key for this letter
         int letterKey = tolower(k[j % kLen]) - 'a';
-        
         // Keep case of letter
         if (isupper(p[i]))
         {
