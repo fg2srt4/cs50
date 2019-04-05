@@ -1,0 +1,4 @@
+Check if argc equals 2, only program name and keyword should be entered.
+  If more than or less than 2 values return error "Usage: ./vigenere keyword"
+Check if argv is alphabetic.
+  If not, return error "Usage: ./vigenere keyword"
