@@ -3,25 +3,30 @@
 
 int main(void)
 {
-   int height;
-
-    // prompts user for pyramid height between 1 and 23
+    int height;
+   
+    //check that height is between 1 and 8, if not reprompt for new input
     do
     {
-        height = get_int("How tall should it be?");
-    } while (height < 1 || height > 8);
-
-    // for loops specifying number of spaces and hashes per line
-    for (int line = 0; line < height; line++)
+        printf("Please enter a height: ");
+        scanf("%d", &height);
+    } 
+    while (height < 1 || height > 8);
+      
+    //iterate over number of rows (height)
+    for (int n = 0; n < height; n++)
     {
-        for (int spaces = height - line; spaces > 1; spaces--)
+        //loop to print spaces before hashes
+        for (int j = height - 1; j > n; j--)
         {
-            printf(" ");
+            printf(" ");           
         }
-        for (int hashes = 0; hashes < line + 1; hashes++)
+        //loop to print hashes
+        for (int k = 0; k < n + 1; k++)
         {
             printf("#");
         }
+        
         printf("\n");
     }
 }
