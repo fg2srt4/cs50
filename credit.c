@@ -1,29 +1,34 @@
 #include <stdio.h>
 #include <cs50.h>
 
+//declare function name to be used later
 char *type(long long num1);
 
 
 int main(void)
 {
-
+    //declare int and long names
     int total, odd_sum1 = 0, odd_dig1, ev_dig1, ev_sum = 0;
     long long card, card2, original_card;
-
+    
+    //get card numbers
     card = get_long("Number: ");
     card2 = card;
     original_card = card;
     
+    //make sure card entered is at least 13 digits
     if (card < 1000000000000)
     {
         printf("INVALID\n");
         return 0;
     }
 
+    //get every other digit for multiplication
     while (card > 1)
     {
         odd_dig1 = (((card / 10) % 10) * 2);
-        //odd_dig1 = 12
+        
+        //get individual digits if product is > 10
         if (odd_dig1 >= 10)
         {
             int first = odd_dig1 % 10;
@@ -33,12 +38,12 @@ int main(void)
         }
         else
         {
-        odd_sum1 += odd_dig1;
+            odd_sum1 += odd_dig1;
         }
         card = (card / 10) / 10;
     }
 
-
+    //get every other digit not multiplied
     while (card2 > 1)
     {
         ev_dig1 = (card2 % 10);
@@ -48,10 +53,11 @@ int main(void)
 
 
     total = ev_sum + odd_sum1;
-
+    
+    //check to see if last digit in total == 0
     if (total % 10 == 0)
     {
-        char* card_type = type(original_card);
+        char *card_type = type(original_card);
         printf("%s", card_type);
         return 0;
     }
@@ -63,11 +69,12 @@ int main(void)
 }
 
 
-//functions
+//function to determine card  type
 char *type(long long num1)
 {
     char *card_type;
-
+    
+    //get first 2 digits of card num
     while (num1 >= 100)
     {
         num1 = num1 / 10;
